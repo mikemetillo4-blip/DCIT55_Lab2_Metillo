@@ -41,6 +41,7 @@ FROM studentinfo;
 SELECT lastName, REPEAT(lastName, 5) AS "Repeated Last Name" 
 FROM studentinfo;
 
+UPDATE studentinfo SET age = TIMESTAMPDIFF(YEAR, birthdate, CURDATE());
 SELECT AVG(age) AS "Average Age" FROM studentinfo;
 
 SELECT studentNumber, firstName, lastName, middleName,  DATE_FORMAT(birthdate, '%M %d, %Y') AS formattedBirthDate,  age, citizenship, sex 
